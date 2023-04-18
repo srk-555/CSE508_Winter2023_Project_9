@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import SearchComponent from './SearchComponent.js';
+import MyComponent from './MyComponent';
 
 
 function App() {
