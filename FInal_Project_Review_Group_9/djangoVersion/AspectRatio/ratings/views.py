@@ -12,7 +12,7 @@ from rest_framework.pagination import PageNumberPagination
 
 
 class MyPagination(PageNumberPagination):
-    page_size = 10
+    page_size = 50
 
 # Create your views here.
 class ReviewViewSet(viewsets.ModelViewSet):

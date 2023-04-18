@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+.search-bar.focused .search-icon {
+  transform: translateX(-10px);
+}
+
+
+
+
+
+
+
+
