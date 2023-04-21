@@ -9,6 +9,7 @@ const SearchLogic = (searchTerm) => {
         try{
           console.log(searchTerm)
             const res = await fetch(`http://localhost:8000/reviews/v1/details/`+searchTerm+'/');
+            // console.log(res)
             /*console.log("code is coming here")*/
             const actualData = await res.json();
             //console.log(actualData);
