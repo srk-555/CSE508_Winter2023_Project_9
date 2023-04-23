@@ -16,7 +16,7 @@
   4. To launch the Django server run following commands:
      4.1 python manage.py runserver
      
- # Frontend Working:
+# Frontend Working:
   FrameWork used for frontend: React
   
 ## Steps to run React server:
