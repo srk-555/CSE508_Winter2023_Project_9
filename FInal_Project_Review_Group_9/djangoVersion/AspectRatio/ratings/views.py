@@ -35,9 +35,10 @@ class BooksView(generics.ListAPIView):
 
 
 class ElectronicsView(generics.ListAPIView):
+    pagination_class = MyPagination
     queryset = Electronics.objects.all()
     serializer_class = ElectronicsSerializer
-    filter_backends = (SearchFilter)
+    filter_backends = (SearchFilter, OrderingFilter)
     search_fields = ('id')
 
 class DvdsView(generics.ListAPIView):

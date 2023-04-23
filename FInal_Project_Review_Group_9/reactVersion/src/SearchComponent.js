@@ -29,9 +29,12 @@ function SearchComponent() {
       const actualData = await res.json();
       setData(actualData.results);
       setSearchedTerm(searchTerm);   
+
+      var res = await fetch('http://localhost:8000/reviews/v1/list/books');
+      const adata = await res.json();
   
       
-      console.log("Actual data is - "+actualData.results)   
+      console.log("Actual data is - "+adata[0].plot)   
     }      
   }
 

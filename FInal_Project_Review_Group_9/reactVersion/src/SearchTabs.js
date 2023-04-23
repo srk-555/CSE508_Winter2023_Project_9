@@ -4,6 +4,7 @@ import "./tabs.css?v=1";
 
 import logo from './logo.svg';
 import SearchComponent from './SearchComponent.js';
+import RankingComponent from './RankingComponent.js'
 const SearchTabs = () => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
@@ -25,7 +26,7 @@ const SearchTabs = () => {
       <SearchComponent/>
        </TabPanel>
        <TabPanel>
-       {/* <Ingredient_Search/> */}
+       <RankingComponent/>
        </TabPanel>
 
      </Tabs>
