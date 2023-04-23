@@ -1,3 +1,14 @@
+# Pyhton Notebook working:
+  1. Install python
+  2. Install jupytor notebook
+  3. Make environment necessary changes
+  4. Open .ipynb file in jupyter notebook
+  5. Import necessary modules and dataset
+  6. Run the .ipynb notebook
+  7. You are good to go.
+  
+
+
 # Backend Working:
   FrameWork used for backend: Django
   
