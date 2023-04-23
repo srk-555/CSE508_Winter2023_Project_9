@@ -14,25 +14,33 @@ function SearchComponent() {
   const handleProductClick = (product) => {
     setSelectedProduct(product);
   };
-  
 
+  
+  
   const handleModalClose = () => {
     setSelectedProduct(null);
   };
 
+
   const getReviewData = async (event) => {
-    if (event.key === "Enter" || event.type === "click") {
-      console.log(searchTerm)
+    if (event && (event.key === "Enter" || event.type === "click")) {
+      console.log("Search Term is - "+searchTerm)
       var res = await fetch(`http://localhost:8000/reviews/v1/list?search=`+searchTerm);
       const actualData = await res.json();
       setData(actualData.results);
       setSearchedTerm(searchTerm);   
+  
+      
+      console.log("Actual data is - "+actualData.results)   
     }      
   }
+
 
   useEffect(() => {
     getReviewData(); 
   }, [])
+
+
 
   console.log(data)
 
@@ -46,11 +54,11 @@ function SearchComponent() {
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
+  
 
   return (
     <div>
-      {/* <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "500px" }}> */}
-        <h1 style={{color:'#333'}}><i>Search a Product or a Product Category</i></h1>
+        <h1 style={{color:'#333'}}><i>Search a Product</i></h1>
         <div className="search-bar">
         <span className="search-icon">&#128269;</span>
           <input
@@ -81,35 +89,13 @@ function SearchComponent() {
             </div>
           ))}
         </div>
-
         )}
-{/* {Array.isArray(currentItems) && (
-  <div className="search-results" style={{ overflowX: "auto" }}>
-    {currentItems.map((item) => (
-      <div key={item.url}>
-        <a className="card" href="#" onClick={() => handleProductClick(item)}>
-          <h3>{item.product_name}</h3>
-        </a>
-      </div>
-    ))}
-  </div>
-)} */}
-
 
 
         {selectedProduct && (
           <AspectRatings product={selectedProduct} handleClose={handleModalClose} />
         )}
 
-        {/* <ul className="pagination">
-          {pageNumbers.map((pageNumber) => (
-            <li key={pageNumber} className={currentPage === pageNumber ? "active" : null}>
-              <a href="#" onClick={() => setCurrentPage(pageNumber)}>
-                {pageNumber}
-              </a>
-            </li>
-          ))}
-        </ul> */}
         <div style={{textAlign: "center"}}>
         <div className="pagination">
   {pageNumbers.map((pageNumber, index) => (
@@ -121,9 +107,7 @@ function SearchComponent() {
     </li>
   ))}
 </div>
-</div>
-
-      
+</div>   
     </div>
   );
   

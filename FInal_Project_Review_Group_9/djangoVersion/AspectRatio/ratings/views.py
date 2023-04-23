@@ -55,4 +55,3 @@ class KitchenView(generics.ListAPIView):
     filter_backends = (SearchFilter, OrderingFilter)
     search_fields = ('id')
 
-
